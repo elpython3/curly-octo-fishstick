@@ -1,0 +1,32 @@
+package frc.robot.subsystems;
+
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.ctre.phoenix6.hardware.TalonFX;
+
+public class Climber extends SubsystemBase {
+
+private final TalonFX motor1 = new TalonFX(0);
+
+  /** Creates a new Climber. */
+public Climber() {}
+
+public void moveMotor(double speed, double degree)
+{
+    motor1.set(speed);
+    motor1.setPosition(degree);
+}
+
+public double getCurrentDegree() {
+    return motor1.getPosition() * 360.0;
+}
+
+public void resetMotor()
+{
+    motor1.setPosition(0);
+}
+
+@Override
+public void periodic() {
+    // This method will be called once per scheduler run
+}
+}
