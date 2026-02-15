@@ -2,8 +2,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.event.EventLoop;
-import frc.robot.subsystems.Climber.Climber;
-import frc.robot.subsystems.Climber.ClimberStates;
+import frc.robot.subsystems.coralManipulator.CoralManipulator;
+import frc.robot.subsystems.coralManipulator.CoralManipulatorStates;
 import frc.robot.subsystems.drive.Drive;
 import frc.robot.subsystems.drive.PathingMode;
 import frc.robot.subsystems.drive.PathingOverride;
@@ -14,7 +14,7 @@ import frc.robot.util.Util;
 public class ControlScheme implements IPeriodic {
 
     protected Drive drive;
-    protected Climber climb;
+    protected CoralManipulator coralManipulator;
 
     public ControlScheme() {
         super();
@@ -60,7 +60,7 @@ public class ControlScheme implements IPeriodic {
         }
 
         if (OI.DR.getAButtonReleased()) {
-            climb.queueState(ClimberStates.CLIMBING);
+           coralManipulator.queueState(CoralManipulatorStates.OUTTAKE); 
         }
     }
 }

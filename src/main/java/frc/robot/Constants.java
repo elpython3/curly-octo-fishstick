@@ -26,6 +26,9 @@ import edu.wpi.first.wpilibj.RobotBase;
  * reduce verbosity.
  */
 public final class Constants {
+    public class CoralConstants{
+        public final static double MAXVEL = 0.9; // placeholder
+    }
     public class ClimberConstants{
       public final static double climberResetVal = 100; // place holder
       public final static double maxAcc = 0.9; //placeholder
