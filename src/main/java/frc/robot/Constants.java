@@ -95,4 +95,21 @@ public final class Constants {
         public static final double targetIndexVel = 0.0;
         public static final double targetFlyVel = 10.0;
     }
+
+    public static class ClimberConstants{
+        public static final double inAngle = 67; //placeholders, of course
+        public static final double outAngle = 67;
+        public static final double inSpeed = 67;
+        public static final double outSpeed = 67;
+        public static final double staySpeed = 6.7;
+        public static final double tolerance = 0.67;
+        public static final double kP = 0;
+        public static final double kI = 0;
+        public static final double kD = 0;
+    }
+
+    public static class CoralConstants{
+        public static final double intakeSpeed = 0.67; 
+        public static final double outtakeSpeed = 0.67;
+    }
 }

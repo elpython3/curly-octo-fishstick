@@ -20,6 +20,8 @@ import edu.wpi.first.wpilibj.Threads;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.generated.TunerConstants;
+import frc.robot.subsystems.Manipulator.CoralManipulator;
+import frc.robot.subsystems.Climber.Climber;
 import frc.robot.subsystems.drive.Drive;
 import frc.robot.subsystems.tracking.Tracking;
 import frc.robot.util.MTimer;
@@ -46,7 +48,8 @@ public class Robot extends LoggedRobot {
 
     private Drive drive;
     private Tracking tracking;
-
+    private CoralManipulator coralManipulator;
+    private Climber climber;
     private boolean lastState = false;
 
     private ControlScheme scheme;
@@ -115,7 +118,8 @@ public class Robot extends LoggedRobot {
         // init subsystems
         drive = Drive.getInstance();
         tracking = Tracking.getInstance();
-        
+        coralManipulator = CoralManipulator.getInstance();
+
         // Check for valid swerve config
         var modules = new SwerveModuleConstants[] {
                 TunerConstants.FrontLeft,
@@ -157,7 +161,8 @@ public class Robot extends LoggedRobot {
 
         tracking.periodic();
         drive.periodic();
-
+        coralManipulator.periodic();
+        climber.periodic();
         PerfTracker.periodic();
         Threads.setCurrentThreadPriority(false, 10);
     }
